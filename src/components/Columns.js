@@ -29,6 +29,7 @@ class Columns extends React.Component {
         content: (
           <div>
             <img width="100%" src="https://user-images.githubusercontent.com/1938043/63359503-26201880-c36d-11e9-9570-6011a0709293.jpg" alt="OERde17-Camp-Tilman-Vogler-Tag-1" />
+            <div style={{textAlign: 'right'}}><small>{translate('Tilman Vogler für OERde17, CC BY 4.0')}</small></div>
             <h3>{translate('Welcome to the OER world map!')}</h3>
             <p>
               {translate('The OER World Map is a project which aims to illuminate the global Open Educational Resources movement by facilitating interaction and collaboration.')}
@@ -91,14 +92,6 @@ class Columns extends React.Component {
           </div>
         ),
       },
-      {
-        target: '.activityFeedLink',
-        content: (
-          <div>
-            <p>{translate("To check out what's was recently added or edited, use the Activity Feed.")}</p>
-          </div>
-        ),
-      },
     ]
 
     const typesSteps = types.map(type => ({
@@ -112,6 +105,14 @@ class Columns extends React.Component {
     }))
 
     this.steps.push(...typesSteps)
+    this.steps.push({
+      target: '.activityFeedLink',
+      content: (
+        <div>
+          <p>{translate("To check out what's was recently added or edited, use the Activity Feed.")}</p>
+        </div>
+      ),
+    })
     this.steps.push({
       target: '.ResourceIndex',
       content: (
